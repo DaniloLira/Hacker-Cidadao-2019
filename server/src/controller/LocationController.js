@@ -1,10 +1,10 @@
 const bcrypt = require("bcryptjs");
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "me",
+  user: "danil",
   host: "localhost",
   database: "acidentes",
-  password: "123",
+  password: "19512790010",
   port: 5432
 });
 
@@ -16,7 +16,6 @@ pool.on("error", (err, client) => {
 module.exports = {
   async store(req, res) {
     const { latitude, longitude, timestamp } = req.body;
-
     pool.query(
       "INSERT INTO location (latitude,longitude,timestamp) VALUES ($1, $2, $3) RETURNING id",
       [latitude, longitude, timestamp],
@@ -24,7 +23,8 @@ module.exports = {
         if (error) {
           console.log(error.stack);
         }
-        res.status(201).send(`User added with ID: ${results.rows[0].id}`);
+        response = JSON.parse(`{\"response\" : \"User added with ID: ${results.rows[0].id}\"}`)
+        res.status(201).send(response);
       }
     );
   }

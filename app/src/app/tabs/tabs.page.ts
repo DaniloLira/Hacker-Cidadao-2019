@@ -17,7 +17,9 @@ export class TabsPage implements OnInit {
       }
     });
   }
-  returnToHome() {}
+  returnToHome() {
+    this.router.navigateByUrl("/home");
+  }
 
   checkIsCreated() {
     return false;

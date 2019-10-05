@@ -16,8 +16,45 @@ export class ApiService {
       timestamp: ts
     };
     const response = await this.http
-      .post(this.API_URL + "novoProcedimento", data)
-      .toPromise();
+    .post(this.API_URL + "novoProcedimento", data)
+    .toPromise();
     return response.json();
   }
+    async criaFormulario(tipoAcidente: String, tipoVeiculoI: String, tipoVeiculoV: String, 
+      airBag: String, capacete: String, cintoSeguranca: String) {
+      var data = {
+        tipoAcidente: tipoAcidente,
+        tipoVeiculoI: tipoVeiculoI,
+        tipoVeiculoV: tipoVeiculoV,
+        airBag: airBag,
+        capacete: capacete,
+        cintoSeguranca: cintoSeguranca
+      };
+      const response = await this.http
+      .post(this.API_URL + "novoFormulario", data)
+      .toPromise();
+      return response.json();
+    }
+
+    async criaVitima(nome: String,
+      cpf: String, 
+      sexo: String,
+      idade: String,
+      civil: String,
+      tipoEnvolvido: String,
+      telefone: String) {
+      var data = {
+        nome: nome,
+        cpf: cpf, 
+        sexo: sexo,
+        idade: idade,
+        civil: civil,
+        tipoEnvolvido: tipoEnvolvido,
+        telefone: telefone
+      };
+      const response = await this.http
+      .post(this.API_URL + "atualizarFormulario", data)
+      .toPromise();
+      return response.json();
+    }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { SqliteService } from "../sqlite.service";
 import { Storage } from "@ionic/storage";
+import { ApiService } from "./../api.service";
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: "app-formulario",
@@ -18,8 +19,9 @@ export class FormularioPage implements OnInit {
   idAcidente: number;
   constructor(
     private router: Router,
-    private sql: SqliteService,
-    private storage: Storage
+    private storage: Storage,
+    private apiService: ApiService,
+    public alertController: AlertController
   ) {}
 
   ngOnInit() {
@@ -27,33 +29,40 @@ export class FormularioPage implements OnInit {
     this.airbag = "0";
     this.capacete = "0";
     this.cinto = "0";
-    this.storage.get("idAcidente").then(val => {
-      if (val) {
-        this.idAcidente = val;
-        this.sql.getRows("acidente", val);
-      }
-    });
-  }
-
-  saveData() {
-    this.sql.insertRow("acidente", {
-      idAcidente: this.idAcidente,
-      tipoAcidente: this.tipoAcidente,
-      tipoVeiculoInfra: this.tipoVeiculoI,
-      tipoVeiculoVit: this.tipoVeiculoV,
-      airbag: this.airbag,
-      capacete: this.capacete,
-      cinto: this.cinto
-    });
   }
 
   navigateToLocation() {
-    this.saveData();
+    this.post();
     this.router.navigateByUrl("/tabs/localizacao");
   }
 
   navigateToVictim() {
-    this.saveData();
+    this.post();
+    this.presentAlert();
     this.router.navigateByUrl("/tabs/vitimas");
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Sucesso',
+      subHeader: 'Acidente adicionado',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async post() {
+    let resp = await this.apiService.criaFormulario(
+      this.tipoAcidente,
+      this.tipoVeiculoI,
+      this.tipoVeiculoV,
+      this.airbag,
+      this.capacete,
+      this.cinto
+    );
+    this.storage.set("idAcidente", resp);
+  }
+
+
 }
