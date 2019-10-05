@@ -12,4 +12,8 @@ export class HomePage {
   navigateToForm() {
     this.router.navigate(["/formulario"]);
   }
+
+  navigateToFormList(){
+    this.router.navigate(["/lista-formularios-incompletos"]);
+  }
 }
