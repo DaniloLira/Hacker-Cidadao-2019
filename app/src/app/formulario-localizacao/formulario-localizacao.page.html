@@ -1,10 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>formulario-localizacao</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color='secondary'>
+    <ion-item class="card" color='primary'>
+        <ion-label class='label'>
+            Data: {{data}}
+        </ion-label>
+        <ion-label class='label'>
+            Hora: {{hora}}
+        </ion-label>
+    </ion-item>
 
-<ion-button (click) = "getLatLen()" color="primary" class="button">Timestamp</ion-button>
+    <ion-item class="card" color='primary'>
+        <ion-text class='text'>
+            <p> Endereço: {{endereco}}</p>
+            <p> Bairro: {{bairro}}</p>
+            <p> Cidade: {{cidade}}</p>
+            <p> Estado: {{estado}}</p>
+        </ion-text>
+    </ion-item>
+
+    <ion-button color="warning" expand="block" (click)="navigateToForm()" class="button">Próximo</ion-button>
 </ion-content>

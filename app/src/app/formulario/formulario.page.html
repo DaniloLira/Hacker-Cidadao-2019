@@ -1,108 +1,112 @@
-
+<ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+</ion-header>
 <ion-content color="secondary">
 
-<ion-item color="primary">
-<ion-label class="labelform" color="warning">Tipo de acidente</ion-label>
-</ion-item>
-      <ion-list color='secondary' >
-            <ion-radio-group [(ngModel)]="tipoAcidente" color='secondary'>
+    <ion-item color="primary">
+        <ion-label class="labelform" color="warning">Tipo de acidente</ion-label>
+    </ion-item>
+    <ion-list color='secondary'>
+        <ion-radio-group [(ngModel)]="tipoAcidente" color='secondary'>
 
             <ion-item color='secondary'>
-              <ion-label>Atropelamento</ion-label>
-              <ion-radio slot="start" value="0" color='warning' checked></ion-radio>
+                <ion-label>Atropelamento</ion-label>
+                <ion-radio slot="start" value="0" color='warning' checked></ion-radio>
             </ion-item>
 
             <ion-item color='secondary'>
-              <ion-label>Colisão/Choque</ion-label>
-              <ion-radio slot="start" value="1" color='warning'></ion-radio>
+                <ion-label>Colisão/Choque</ion-label>
+                <ion-radio slot="start" value="1" color='warning'></ion-radio>
             </ion-item>
             <ion-item color='secondary'>
-              <ion-label>Capotamento</ion-label>
-              <ion-radio slot="start" value="2" color='warning' checked></ion-radio>
+                <ion-label>Capotamento</ion-label>
+                <ion-radio slot="start" value="2" color='warning' checked></ion-radio>
             </ion-item>
 
             <ion-item color='secondary'>
-              <ion-label>Outro</ion-label>
-              <ion-radio slot="start" value="3" color='warning'></ion-radio>
+                <ion-label>Outro</ion-label>
+                <ion-radio slot="start" value="3" color='warning'></ion-radio>
             </ion-item>
-          </ion-radio-group>
-      </ion-list>
+        </ion-radio-group>
+    </ion-list>
 
-<ion-item color="primary">
-<ion-label class="labelform" color="warning">Tipo de veículo da Infrator</ion-label>
-</ion-item>
+    <ion-item color="primary">
+        <ion-label class="labelform" color="warning">Tipo de veículo da Infrator</ion-label>
+    </ion-item>
     <ion-item color="secondary">
-        
-        <ion-select [(ngModel)]="tipoVeiculoI" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" cancelText="Cancelar"  placeholder="Escolha um">
-          <ion-select-option value="carro">Carro </ion-select-option>
-          <ion-select-option value="motocicleta">Motocicleta</ion-select-option>
-          <ion-select-option value="caminhão">Caminhão </ion-select-option>
-          <ion-select-option value="bicileta">Bicicleta</ion-select-option>
-        </ion-select>
-      </ion-item>
 
-<ion-item color="primary">
+        <ion-select [(ngModel)]="tipoVeiculoI" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" cancelText="Cancelar" placeholder="Escolha um">
+            <ion-select-option value="carro">Carro </ion-select-option>
+            <ion-select-option value="motocicleta">Motocicleta</ion-select-option>
+            <ion-select-option value="caminhão">Caminhão </ion-select-option>
+            <ion-select-option value="bicileta">Bicicleta</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item color="primary">
         <ion-label class="labelform">Tipo de veículo da vítima</ion-label>
-</ion-item>
+    </ion-item>
     <ion-item color="secondary">
         <ion-select [(ngModel)]="tipoVeiculoV" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" cancelText="Cancelar" placeholder="Escolha um">
-          <ion-select-option value="carro">Carro </ion-select-option>
-          <ion-select-option value="motocicleta">Motocicleta</ion-select-option>
-          <ion-select-option value="caminhão">Caminhão </ion-select-option>
-          <ion-select-option value="bicileta">Bicicleta</ion-select-option>
+            <ion-select-option value="carro">Carro </ion-select-option>
+            <ion-select-option value="motocicleta">Motocicleta</ion-select-option>
+            <ion-select-option value="caminhão">Caminhão </ion-select-option>
+            <ion-select-option value="bicileta">Bicicleta</ion-select-option>
         </ion-select>
-      </ion-item>
-<ion-item color="primary">
+    </ion-item>
+    <ion-item color="primary">
         <ion-label class="labelform">Air Bag</ion-label>
-</ion-item>
-      <ion-list color='secondary'>
-          <ion-radio-group [(ngModel)]="airbag" color='secondary'>
-        
+    </ion-item>
+    <ion-list color='secondary'>
+        <ion-radio-group [(ngModel)]="airbag" color='secondary'>
+
             <ion-item color='secondary'>
-              <ion-label>Sim</ion-label>
-              <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
+                <ion-label>Sim</ion-label>
+                <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
             </ion-item>
 
             <ion-item color='secondary'>
-              <ion-label>Não</ion-label>
-              <ion-radio slot="start" value="0" color='warning'></ion-radio>
+                <ion-label>Não</ion-label>
+                <ion-radio slot="start" value="0" color='warning'></ion-radio>
             </ion-item>
-          </ion-radio-group>
-      </ion-list>
-<ion-item color="primary">
+        </ion-radio-group>
+    </ion-list>
+    <ion-item color="primary">
         <ion-label class="labelform">Capacete</ion-label>
-</ion-item>
-      <ion-list color='secondary'>
-          <ion-radio-group [(ngModel)]="capacete" color='secondary'>
-        
+    </ion-item>
+    <ion-list color='secondary'>
+        <ion-radio-group [(ngModel)]="capacete" color='secondary'>
+
             <ion-item color='secondary'>
-              <ion-label>Sim</ion-label>
-              <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
+                <ion-label>Sim</ion-label>
+                <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
             </ion-item>
 
             <ion-item color='secondary'>
-              <ion-label>Não</ion-label>
-              <ion-radio slot="start" value="0" color='warning'></ion-radio>
+                <ion-label>Não</ion-label>
+                <ion-radio slot="start" value="0" color='warning'></ion-radio>
             </ion-item>
-          </ion-radio-group>
-      </ion-list>
+        </ion-radio-group>
+    </ion-list>
 
-<ion-item color="primary">
+    <ion-item color="primary">
         <ion-label class="labelform">Cinto de segurança</ion-label>
-</ion-item>
-      <ion-list>
-          <ion-radio-group [(ngModel)]="cinto" color='secondary'>
+    </ion-item>
+    <ion-list>
+        <ion-radio-group [(ngModel)]="cinto" color='secondary'>
             <ion-item color='secondary'>
-              <ion-label>Sim</ion-label>
-              <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
+                <ion-label>Sim</ion-label>
+                <ion-radio slot="start" value="1" color='warning' checked></ion-radio>
             </ion-item>
 
             <ion-item color='secondary'>
-              <ion-label>Não</ion-label>
-              <ion-radio slot="start" value="0" color='warning'></ion-radio>
+                <ion-label>Não</ion-label>
+                <ion-radio slot="start" value="0" color='warning'></ion-radio>
             </ion-item>
-          </ion-radio-group>
-      </ion-list>
+        </ion-radio-group>
+    </ion-list>
 
-    <ion-button color="warning" expand="block" (click)="sendForm()" class="button">Próximo</ion-button>
+    <ion-button color="warning" expand="block" (click)="navigateToLocation()" class="button2">Anterior</ion-button>
+    <ion-button color="warning" expand="block" (click)="navigateToVictim()" class="button">Próximo</ion-button>
 </ion-content>

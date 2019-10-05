@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-formulario",
@@ -12,7 +13,7 @@ export class FormularioPage implements OnInit {
   airbag: String;
   capacete: String;
   cinto: String;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.tipoAcidente = "0";
@@ -21,7 +22,11 @@ export class FormularioPage implements OnInit {
     this.cinto = "0";
   }
 
-  sendForm() {
-    console.log(this.tipoAcidente);
+  navigateToLocation() {
+    this.router.navigateByUrl("/tabs/localizacao");
+  }
+
+  navigateToVictim() {
+    this.router.navigateByUrl("/tabs/vitimas");
   }
 }

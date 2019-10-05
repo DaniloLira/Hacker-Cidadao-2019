@@ -1,29 +1,29 @@
 <ion-header>
-    <ion-toolbar>
-      <div>
-          <ion-buttons slot="start">
-              <ion-back-button defaultHref="/home"></ion-back-button>
+    <ion-toolbar color="secondary">
+        <div>
+            <ion-buttons slot="start">
+                <ion-icon slot="icon-only" (tap)="returnToHome()" name="md-home"> </ion-icon>
             </ion-buttons>
-      </div>
+        </div>
 
     </ion-toolbar>
 </ion-header>
 
-<ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-          <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="formulario">
-        <ion-icon name="car"></ion-icon>
-        <ion-label>Formulário Acidente</ion-label>
-      </ion-tab-button>
+<ion-tabs color="secondary">
+    <ion-tab-bar class="bar" slot="bottom ">
+        <ion-tab-button class="tab" tab="localizacao">
+            <ion-icon name="pin"></ion-icon>
+            <ion-label>Localização</ion-label>
+        </ion-tab-button>
 
-      <ion-tab-button tab="vitimas">
-          <ion-icon name="person"></ion-icon>
-          <ion-label>Formulário Vítimas</ion-label>
+        <ion-tab-button class="tab" tab="formulario">
+            <ion-icon name="car"></ion-icon>
+            <ion-label>Formulário Acidente</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab" tab="vitimas">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Formulário Vítimas</ion-label>
         </ion-tab-button>
     </ion-tab-bar>
 </ion-tabs>
