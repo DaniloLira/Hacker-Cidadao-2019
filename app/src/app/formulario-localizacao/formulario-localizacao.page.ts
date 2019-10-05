@@ -19,6 +19,7 @@ export class FormularioLocalizacaoPage implements OnInit {
   estado: string;
   data: string;
   hora: string;
+  cep: string;
 
   constructor(
     private geolocation: Geolocation,
@@ -54,12 +55,15 @@ export class FormularioLocalizacaoPage implements OnInit {
     await geocoder.geocode(request, (results, status) => {
       if (status == google.maps.GeocoderStatus.OK) {
         let result = results[0];
+        console.log(result);
         this.zone.run(() => {
           if (result != null) {
-            this.endereco = result.address_components[1].long_name;
+            //Adição do número ao endereço
+            this.endereco = result.address_components[1].long_name + ', ' + result.address_components[0].long_name;
             this.bairro = result.address_components[2].long_name;
             this.cidade = result.address_components[3].long_name;
             this.estado = result.address_components[4].long_name;
+            this.cep = result.address_components[6].long_name;
           }
         });
       }
