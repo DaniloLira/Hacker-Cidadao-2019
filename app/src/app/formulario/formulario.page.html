@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo Componente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content color="primary">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+              <ion-icon name="pin" ></ion-icon>
+          </ion-col>
+          
+          <ion-col size="2">
+              <ion-icon name="car"></ion-icon>
+          </ion-col>
+            
+          <ion-col size="2">
+              <ion-icon name="people"></ion-icon>
+          </ion-col>
+            
+        </ion-row>
+    </ion-grid>
+    <ion-item color="primary">
+      <ion-label position="floating">Tipo de acidente</ion-label>
+      <ion-select value="brown" okText="Confirmar" cancelText="Cancelar">
+        <ion-select-option value="brown">Atropelamento</ion-select-option>
+        <ion-select-option value="blonde">Colisão/Choque</ion-select-option>
+        <ion-select-option value="black">Capotamento</ion-select-option>
+        <ion-select-option value="red">Outro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item color="primary">
+      <ion-label position="floating">Tipo de veículo do infrator</ion-label>
+      <ion-select value="brown" okText="Confirmar" cancelText="Cancelar">
+        <ion-select-option value="brown">Carro </ion-select-option>
+        <ion-select-option value="blonde">Motocicleta</ion-select-option>
+        <ion-select-option value="black">Caminhão </ion-select-option>
+        <ion-select-option value="red">Bicicleta</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item color="primary">
+      <ion-label position="floating">Tipo de veículo da vítima</ion-label>
+      <ion-select value="brown" okText="Confirmar" cancelText="Cancelar">
+        <ion-select-option value="brown">Carro </ion-select-option>
+        <ion-select-option value="blonde">Motocicleta</ion-select-option>
+        <ion-select-option value="black">Caminhão </ion-select-option>
+        <ion-select-option value="red">Bicicleta</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button color="primary" class="button">Enviar Formulário</ion-button>
+</ion-content>
