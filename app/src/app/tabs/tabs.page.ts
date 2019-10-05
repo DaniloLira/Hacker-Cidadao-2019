@@ -8,6 +8,7 @@ import { Storage } from "@ionic/storage";
 export class TabsPage implements OnInit {
   constructor(private storage: Storage) {}
   idAcidente: number;
+  isCreated: boolean;
   ngOnInit() {
     this.storage.get("idAcidente").then(val => {
       if (val) {
@@ -16,4 +17,13 @@ export class TabsPage implements OnInit {
     });
   }
   returnToHome() {}
+
+  checkIsCreated() {
+    return false;
+    this.storage.get("idAcidente").then(val => {
+      this.isCreated = val != undefined && val != null;
+      console.log(val);
+      console.log(this.isCreated);
+    });
+  }
 }
