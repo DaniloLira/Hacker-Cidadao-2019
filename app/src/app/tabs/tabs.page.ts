@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class TabsPage implements OnInit {
   constructor(private storage: Storage, private router: Router) {}
   idAcidente: number;
+  isCreated: boolean;
   ngOnInit() {
     this.storage.get("idAcidente").then(val => {
       if (val) {
@@ -16,8 +17,14 @@ export class TabsPage implements OnInit {
       }
     });
   }
-  returnToHome() {
-    console.log("Teste");
-    this.router.navigate(["/home"]); 
+  returnToHome() {}
+
+  checkIsCreated() {
+    return false;
+    this.storage.get("idAcidente").then(val => {
+      this.isCreated = val != undefined && val != null;
+      console.log(val);
+      console.log(this.isCreated);
+    });
   }
 }

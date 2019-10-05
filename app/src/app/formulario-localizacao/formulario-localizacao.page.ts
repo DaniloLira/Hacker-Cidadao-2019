@@ -92,7 +92,7 @@ export class FormularioLocalizacaoPage implements OnInit {
   }
 
   async navigateToForm() {
-    //await this.post();
+    await this.post();
     this.router.navigateByUrl("/tabs/formulario");
   }
 
