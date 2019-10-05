@@ -1,9 +1,52 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>vitimas</ion-title>
+    <ion-title>vítima</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+    <ion-item color="primary">
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item color="primary">
+          <ion-label position="floating">RG ou CPF</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+    <ion-item color="primary">
+        <ion-label position="floating">Sexo</ion-label>
+        <ion-select value="confirmação" okText="Confirmar" cancelText="Cancelar">
+          <ion-select-option value="Feminino">Feminino</ion-select-option>
+          <ion-select-option value="Masculino">Masculino</ion-select-option>
+          <ion-select-option value="Outro">Outro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    <ion-item color="primary">
+        <ion-label position="floating">Idade</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <ion-item color="primary">
+        <ion-label position="floating">Estado físico</ion-label>
+        <ion-select value="confirmação" okText="Confirmar" cancelText="Cancelar">
+          <ion-select-option value="ileso">ileso</ion-select-option>
+          <ion-select-option value="lesões leves">lesões leves</ion-select-option>
+          <ion-select-option value="lesões gravez">lesões graves</ion-select-option>
+          <ion-select-option value="óbito">óbito</ion-select-option>
+          <ion-select-option value="não informado">não informado</ion-select-option>
+        </ion-select>
+      </ion-item>    
+      <ion-item color="primary">
+          <ion-label position="floating">Tipo envolvido</ion-label>
+          <ion-select value="confirmação" okText="Confirmar" cancelText="Cancelar">
+            <ion-select-option value="passageiro">passageiro</ion-select-option>
+            <ion-select-option value="condutor">condutor</ion-select-option>
+            <ion-select-option value="pedestre">pedestre</ion-select-option>
+            <ion-select-option value="ciclista">ciclista</ion-select-option>
+            <ion-select-option value="testemunhas">testemunhas</ion-select-option>
+          </ion-select>
+        </ion-item>    
+        <ion-item color="primary">
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+          <ion-button color="warning" class="button" style="width: 100%;">Enviar Formulário</ion-button>
 </ion-content>
