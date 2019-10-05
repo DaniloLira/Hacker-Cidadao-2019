@@ -22,7 +22,7 @@ module.exports = {
       [latitude, longitude, timestamp],
       (error, results) => {
         if (error) {
-          console.log(err.stack);
+          console.log(error.stack);
         }
         res.status(201).send(`User added with ID: ${results.rows[0].id}`);
       }

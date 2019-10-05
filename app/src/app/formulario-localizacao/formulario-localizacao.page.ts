@@ -1,3 +1,4 @@
+import { ApiService } from "./../api.service";
 import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 
@@ -13,7 +14,10 @@ export class FormularioLocalizacaoPage implements OnInit {
   map: any;
   address: string;
 
-  constructor(private geolocation: Geolocation) {}
+  constructor(
+    private geolocation: Geolocation,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {}
 
@@ -24,10 +28,19 @@ export class FormularioLocalizacaoPage implements OnInit {
         this.latitude = resp.coords.latitude;
         this.longitude = resp.coords.longitude;
         this.timestamp = resp.timestamp;
-        console.log(resp);
+        this.post();
       })
       .catch(error => {
         console.log("Error getting location", error);
       });
+  }
+
+  post() {
+    let resp = this.apiService.criaProcedimento(
+      this.latitude,
+      this.longitude,
+      this.timestamp
+    );
+    console.log(resp);
   }
 }
