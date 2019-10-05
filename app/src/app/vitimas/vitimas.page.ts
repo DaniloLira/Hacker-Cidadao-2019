@@ -34,7 +34,7 @@ export class VitimasPage implements OnInit {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Sucesso !',
-      subHeader: 'Vítima adicionada com sucesso ',
+      subHeader: 'Vítima adicionada',
       buttons: ['OK']
     });
 
