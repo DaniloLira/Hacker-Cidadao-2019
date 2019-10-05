@@ -12,7 +12,8 @@ const routes: Routes = [
     loadChildren:
       "./formulario-localizacao/formulario-localizacao.module#FormularioLocalizacaoPageModule"
   },
-  { path: 'consulta', loadChildren: './consulta/consulta.module#ConsultaPageModule' },  { path: 'lista-formularios-incompletos', loadChildren: './lista-formularios-incompletos/lista-formularios-incompletos.module#ListaFormulariosIncompletosPageModule' }
+  { path: 'consulta', loadChildren: './consulta/consulta.module#ConsultaPageModule' },
+  { path: 'lista-formularios-incompletos', loadChildren: './lista-formularios-incompletos/lista-formularios-incompletos.module#ListaFormulariosIncompletosPageModule' }
 
 
 ];
@@ -23,4 +24,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
