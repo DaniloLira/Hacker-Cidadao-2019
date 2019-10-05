@@ -1,5 +1,7 @@
 {
   "name": "hackerCidadao",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
