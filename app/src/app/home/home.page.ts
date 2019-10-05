@@ -10,10 +10,10 @@ export class HomePage {
   constructor(private router: Router) {}
 
   navigateToForm() {
-    this.router.navigate(["/formulario"]);
+    this.router.navigate(["/tabs/formulario"]);
   }
 
   navigateToFormList(){
-    this.router.navigate(["/lista-formularios-incompletos"]);
+    this.router.navigate(["/tabs/lista-formularios-incompletos"]);
   }
 }

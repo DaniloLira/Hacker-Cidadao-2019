@@ -23,7 +23,11 @@ const routes: Routes = [
       {
         path: 'vitimas',
         loadChildren: '../vitimas/vitimas.module#VitimasPageModule'
-      } 
+      },
+      {
+        path: 'lista-formularios-incompletos',
+        loadChildren: '../lista-formularios-incompletos/lista-formularios-incompletos.module#ListaFormulariosIncompletosPageModule'
+      }
     ]
   },
   {
